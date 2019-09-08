@@ -1,0 +1,43 @@
+.content {
+  padding-top: 20px;
+
+  .car {
+    padding-bottom: 24px;
+  }
+
+  .info {
+    margin-bottom: 16px;
+    h1 {
+      margin: 0;
+      padding: 10px 0 6px 10px;
+      line-height: 1;
+      font-size: 18px;
+      font-weight: normal;
+
+      .totalItems {
+        font-weight: 700;
+        color: #333333;
+      }
+    }
+
+    .sortContainer {
+      display: flex;
+      flex-direction: column;
+
+      .sort {
+        align-self: flex-end;
+
+        .title {
+          font-size: 16px;
+          font-weight: bold;
+          padding-right: 8px;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    padding-top: 16px;
+    padding-bottom: 40px;
+  }
+}

@@ -1,0 +1,18 @@
+.header {
+  width: 100%;
+  background: #1148ad;
+
+  .logo {
+    padding: 15px 0;
+
+    .navLink {
+      display: inline-block;
+      vertical-align: top;
+      width: 144px;
+      height: 24px;
+      background: url(https://www.economybookings.com/sites/all/themes/ecoww2/img/economy_bookings_logo.svg?1208)
+        no-repeat;
+      background-size: auto 24px;
+    }
+  }
+}

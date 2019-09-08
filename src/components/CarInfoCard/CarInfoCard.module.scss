@@ -1,0 +1,108 @@
+.card {
+  background-color: rgb(248, 248, 248);
+
+  .rowMain {
+    padding: 8px 16px;
+    background-color: rgb(255, 255, 255);
+
+    img {
+      max-height: 172px;
+      max-width: 256px;
+    }
+
+    .modelContainer {
+      padding: 8px 0 6px 0;
+
+      .model {
+        color: #333333;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 0.9;
+        font-weight: bold;
+      }
+
+      .similar {
+        font-weight: normal;
+        color: #666666;
+        white-space: nowrap;
+        font-size: 14px;
+      }
+    }
+
+    .category {
+      display: block;
+      padding: 0 0 15px 0;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #666666;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .priceColumn {
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        align-self: flex-end;
+      }
+    }
+
+    .options {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+
+      .item {
+        display: block;
+        position: relative;
+        padding: 2px 0 3px 0;
+      }
+    }
+  }
+
+  .rowSupplier {
+    border-top: 1px solid #dae2e8;
+    padding: 8px 16px;
+    color: #328ce5;
+    font-weight: 700;
+
+    img {
+      width: 80px;
+      height: 32px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px;
+    }
+
+    .score {
+      font-size: 20px;
+
+      .max {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .characteristics {
+    padding: 14px 0 4px 0;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+
+    .item + .item::before {
+      content: "";
+      margin: 0 6px;
+      display: inline-block;
+      vertical-align: top;
+      width: 1px;
+      height: 14px;
+      background: #cecfd3;
+    }
+  }
+}

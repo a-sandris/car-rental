@@ -1,0 +1,46 @@
+.pagination {
+  display: flex;
+  flex-direction: column;
+
+  .buttons {
+    align-self: center;
+    li {
+      border-bottom: none;
+      display: inline;
+
+      .button {
+        display: inline-block;
+        margin: 6px;
+        width: 30px;
+        height: 30px;
+        padding: 5px 0 0 0;
+        font-size: 13px;
+        color: #666666;
+        text-align: center;
+        background: #f8f8f8;
+        border: 1px solid #cecfd3;
+
+        span {
+          padding: 6px 0 0 0;
+          font-weight: 700;
+          border: none;
+        }
+      }
+
+      .selectable:hover {
+        color: #333333;
+        background: #edf5fb;
+        border: 1px solid #1148ad;
+        cursor: pointer;
+      }
+
+      .active {
+        background: #1148ad;
+
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
