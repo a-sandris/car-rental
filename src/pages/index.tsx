@@ -128,7 +128,6 @@ class UrlState {
   }
 
   asVariables() {
-    console.log(this.page)
     return {
       req: {
         offset: PAGE_SIZE * (this.page - 1),
