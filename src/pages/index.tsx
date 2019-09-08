@@ -89,6 +89,7 @@ class UrlState {
       return this
     }
     this.companies.push(company)
+    this.page = 1
     return this
   }
 
@@ -96,6 +97,7 @@ class UrlState {
     const i = this.companies.indexOf(company)
     if (i > -1) {
       this.companies.splice(i, 1)
+      this.page = 1
       return this
     }
     return this
@@ -103,6 +105,7 @@ class UrlState {
 
   clearCompanies() {
     this.companies = []
+    this.page = 1
     return this
   }
 
@@ -202,43 +205,43 @@ export default (props: PageRendererProps) => {
         {!data ? (
           loader
         ) : (
-          <div>
-            <Row className={styles.info}>
-              <Col span={6}>
-                <h1>
-                  <span className={styles.totalItems}>
-                    {data.cars.totalItems}
-                  </span>{" "}
-                  results
+            <div>
+              <Row className={styles.info}>
+                <Col span={6}>
+                  <h1>
+                    <span className={styles.totalItems}>
+                      {data.cars.totalItems}
+                    </span>{" "}
+                    results
                 </h1>
-              </Col>
-              <Col span={18} className={styles.sortContainer}>
-                <div className={styles.sort}>
-                  <span className={styles.title}>Sort:</span>
-                  <Dropdown overlay={menu} placement="bottomRight">
-                    <Button>
-                      {state.sort === "Asc"
-                        ? "Price (low - high)"
-                        : "Price (high - low)"}
-                    </Button>
-                  </Dropdown>
+                </Col>
+                <Col span={18} className={styles.sortContainer}>
+                  <div className={styles.sort}>
+                    <span className={styles.title}>Sort:</span>
+                    <Dropdown overlay={menu} placement="bottomRight">
+                      <Button>
+                        {state.sort === "Asc"
+                          ? "Price (low - high)"
+                          : "Price (high - low)"}
+                      </Button>
+                    </Dropdown>
+                  </div>
+                </Col>
+              </Row>
+              {data.cars.items.map(car => (
+                <div key={car.id} className={styles.car}>
+                  <CarInfoCard car={car} />
                 </div>
-              </Col>
-            </Row>
-            {data.cars.items.map(car => (
-              <div key={car.id} className={styles.car}>
-                <CarInfoCard car={car} />
+              ))}
+              <div className={styles.pagination}>
+                <Pagination
+                  page={state.page}
+                  totalPages={data.cars.totalPages}
+                  onClick={n => onStateChange(state.setPage(n))}
+                />
               </div>
-            ))}
-            <div className={styles.pagination}>
-              <Pagination
-                page={state.page}
-                totalPages={data.cars.totalPages}
-                onClick={n => onStateChange(state.setPage(n))}
-              />
             </div>
-          </div>
-        )}
+          )}
       </div>
     </div>
   )
