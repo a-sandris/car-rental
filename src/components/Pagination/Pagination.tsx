@@ -31,7 +31,7 @@ export const Pagination: React.FC<PaginationProps> = ({
             </div>
           </li>
         )}
-        {_.range(first, last).map(it => (
+        {_.range(first, last > totalPages ? last : totalPages).map(it => (
           <li key={it} onClick={() => it !== page && onClick(it)}>
             <div
               className={classNames(
